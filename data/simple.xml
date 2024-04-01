@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<oval_definitions xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5"
+  xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5"
+  xmlns:unix-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+  xmlns:red-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+  xmlns:ind-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
+  <generator>
+    <oval:product_name>Red Hat OVAL Patch Definition Merger</oval:product_name>
+    <oval:product_version>3</oval:product_version>
+    <oval:schema_version>5.10</oval:schema_version>
+    <oval:timestamp>2024-03-26T19:08:33</oval:timestamp>
+    <oval:content_version>1711480113</oval:content_version>
+  </generator>
+  <definitions></definitions>
+  <tests></tests>
+  <objects></objects>
+  <states></states>
+  <variables>
+    <local_variable comment="Get saved_entry in /boot/grub2/grubenv" datatype="int" id="oval:com.redhat.rhsa:var:20191167001" version="643">
+      <arithmetic arithmetic_operation="add">
+        <literal_component datatype="int">1</literal_component>
+        <object_component item_field="text" object_ref="oval:com.redhat.rhsa:obj:20191167027"/>
+      </arithmetic>
+    </local_variable>
+  </variables>
+</oval_definitions>

@@ -1,0 +1,189 @@
+<definition class="patch" id="oval:com.redhat.rhba:def:20193384" version="638">
+    <metadata>
+        <title>RHBA-2019:3384: ruby:2.5 bug fix and enhancement update (Moderate)</title>
+        <affected family="unix">
+            <platform>Red Hat Enterprise Linux 8</platform>
+        </affected>
+        <reference ref_id="RHBA-2019:3384" ref_url="https://access.redhat.com/errata/RHBA-2019:3384" source="RHSA"/>
+        <reference ref_id="CVE-2019-8320" ref_url="https://access.redhat.com/security/cve/CVE-2019-8320" source="CVE"/>
+        <reference ref_id="CVE-2019-8321" ref_url="https://access.redhat.com/security/cve/CVE-2019-8321" source="CVE"/>
+        <reference ref_id="CVE-2019-8322" ref_url="https://access.redhat.com/security/cve/CVE-2019-8322" source="CVE"/>
+        <reference ref_id="CVE-2019-8323" ref_url="https://access.redhat.com/security/cve/CVE-2019-8323" source="CVE"/>
+        <reference ref_id="CVE-2019-8325" ref_url="https://access.redhat.com/security/cve/CVE-2019-8325" source="CVE"/>
+        <description>For detailed information on changes in this release, see the Red Hat Enterprise Linux 8.1 Release Notes linked from the References section.</description>
+        <advisory from="secalert@redhat.com">
+            <severity>Moderate</severity>
+            <rights>Copyright 2019 Red Hat, Inc.</rights>
+            <issued date="2019-11-05"/>
+            <updated date="2019-11-05"/>
+            <cve cvss3="7.4/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:H" cwe="CWE-22" href="https://access.redhat.com/security/cve/CVE-2019-8320" impact="moderate" public="20190305">CVE-2019-8320</cve>
+            <cve cvss3="5.3/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N" cwe="CWE-88" href="https://access.redhat.com/security/cve/CVE-2019-8321" impact="low" public="20190305">CVE-2019-8321</cve>
+            <cve cvss3="5.3/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N" cwe="CWE-88" href="https://access.redhat.com/security/cve/CVE-2019-8322" impact="low" public="20190305">CVE-2019-8322</cve>
+            <cve cvss3="5.3/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N" cwe="CWE-88" href="https://access.redhat.com/security/cve/CVE-2019-8323" impact="low" public="20190305">CVE-2019-8323</cve>
+            <cve cvss3="5.3/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N" cwe="CWE-88" href="https://access.redhat.com/security/cve/CVE-2019-8325" impact="low" public="20190305">CVE-2019-8325</cve>
+            <bugzilla href="https://bugzilla.redhat.com/1692512" id="1692512">CVE-2019-8320 rubygems: Delete directory using symlink when decompressing tar</bugzilla>
+            <bugzilla href="https://bugzilla.redhat.com/1692514" id="1692514">CVE-2019-8321 rubygems: Escape sequence injection vulnerability in verbose</bugzilla>
+            <bugzilla href="https://bugzilla.redhat.com/1692516" id="1692516">Escape sequence injection vulnerability in gem owner</bugzilla>
+            <bugzilla href="https://bugzilla.redhat.com/1692519" id="1692519">Escape sequence injection vulnerability in API response handling</bugzilla>
+            <bugzilla href="https://bugzilla.redhat.com/1692522" id="1692522">Escape sequence injection vulnerability in errors</bugzilla>
+            <affected_cpe_list>
+                <cpe>cpe:/a:redhat:enterprise_linux:8</cpe>
+                <cpe>cpe:/a:redhat:enterprise_linux:8::appstream</cpe>
+                <cpe>cpe:/a:redhat:enterprise_linux:8::crb</cpe>
+                <cpe>cpe:/a:redhat:enterprise_linux:8::highavailability</cpe>
+                <cpe>cpe:/a:redhat:enterprise_linux:8::nfv</cpe>
+                <cpe>cpe:/a:redhat:enterprise_linux:8::realtime</cpe>
+                <cpe>cpe:/a:redhat:enterprise_linux:8::resilientstorage</cpe>
+                <cpe>cpe:/a:redhat:enterprise_linux:8::sap</cpe>
+                <cpe>cpe:/a:redhat:enterprise_linux:8::sap_hana</cpe>
+                <cpe>cpe:/a:redhat:enterprise_linux:8::supplementary</cpe>
+                <cpe>cpe:/o:redhat:enterprise_linux:8</cpe>
+                <cpe>cpe:/o:redhat:enterprise_linux:8::baseos</cpe>
+            </affected_cpe_list>
+        </advisory>
+    </metadata>
+    <criteria operator="OR">
+        <criterion comment="Red Hat Enterprise Linux must be installed" test_ref="oval:com.redhat.rhba:tst:20191992005"/>
+        <criteria operator="AND">
+            <criteria operator="OR">
+                <criterion comment="Red Hat Enterprise Linux 8 is installed" test_ref="oval:com.redhat.rhba:tst:20191992003"/>
+                <criterion comment="Red Hat CoreOS 4 is installed" test_ref="oval:com.redhat.rhba:tst:20191992004"/>
+            </criteria>
+            <criteria operator="OR">
+                <criteria operator="AND">
+                    <criterion comment="Module ruby:2.5 is enabled" test_ref="oval:com.redhat.rhba:tst:20193384065"/>
+                    <criteria operator="OR">
+                        <criteria operator="AND">
+                            <criterion comment="ruby is earlier than 0:2.5.5-105.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384001"/>
+                            <criterion comment="ruby is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384002"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="ruby-devel is earlier than 0:2.5.5-105.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384003"/>
+                            <criterion comment="ruby-devel is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384004"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="ruby-doc is earlier than 0:2.5.5-105.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384005"/>
+                            <criterion comment="ruby-doc is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384006"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="ruby-irb is earlier than 0:2.5.5-105.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384007"/>
+                            <criterion comment="ruby-irb is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384008"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="ruby-libs is earlier than 0:2.5.5-105.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384009"/>
+                            <criterion comment="ruby-libs is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384010"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-abrt is earlier than 0:0.3.0-4.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384011"/>
+                            <criterion comment="rubygem-abrt is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384012"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-abrt-doc is earlier than 0:0.3.0-4.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384013"/>
+                            <criterion comment="rubygem-abrt-doc is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384014"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-bigdecimal is earlier than 0:1.3.4-105.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384015"/>
+                            <criterion comment="rubygem-bigdecimal is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384016"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-bson is earlier than 0:4.3.0-2.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384017"/>
+                            <criterion comment="rubygem-bson is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384018"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-bson-doc is earlier than 0:4.3.0-2.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384019"/>
+                            <criterion comment="rubygem-bson-doc is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384020"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-bundler is earlier than 0:1.16.1-3.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384021"/>
+                            <criterion comment="rubygem-bundler is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384022"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-bundler-doc is earlier than 0:1.16.1-3.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384023"/>
+                            <criterion comment="rubygem-bundler-doc is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384024"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-did_you_mean is earlier than 0:1.2.0-105.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384025"/>
+                            <criterion comment="rubygem-did_you_mean is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384026"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-io-console is earlier than 0:0.4.6-105.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384027"/>
+                            <criterion comment="rubygem-io-console is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384028"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-json is earlier than 0:2.1.0-105.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384029"/>
+                            <criterion comment="rubygem-json is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384030"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-minitest is earlier than 0:5.10.3-105.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384031"/>
+                            <criterion comment="rubygem-minitest is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384032"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-mongo is earlier than 0:2.5.1-2.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384033"/>
+                            <criterion comment="rubygem-mongo is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384034"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-mongo-doc is earlier than 0:2.5.1-2.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384035"/>
+                            <criterion comment="rubygem-mongo-doc is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384036"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-mysql2 is earlier than 0:0.4.10-4.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384037"/>
+                            <criterion comment="rubygem-mysql2 is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384038"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-mysql2-doc is earlier than 0:0.4.10-4.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384039"/>
+                            <criterion comment="rubygem-mysql2-doc is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384040"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-net-telnet is earlier than 0:0.1.1-105.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384041"/>
+                            <criterion comment="rubygem-net-telnet is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384042"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-openssl is earlier than 0:2.1.2-105.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384043"/>
+                            <criterion comment="rubygem-openssl is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384044"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-pg is earlier than 0:1.0.0-2.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384045"/>
+                            <criterion comment="rubygem-pg is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384046"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-pg-doc is earlier than 0:1.0.0-2.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384047"/>
+                            <criterion comment="rubygem-pg-doc is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384048"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-power_assert is earlier than 0:1.1.1-105.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384049"/>
+                            <criterion comment="rubygem-power_assert is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384050"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-psych is earlier than 0:3.0.2-105.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384051"/>
+                            <criterion comment="rubygem-psych is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384052"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-rake is earlier than 0:12.3.0-105.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384053"/>
+                            <criterion comment="rubygem-rake is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384054"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-rdoc is earlier than 0:6.0.1-105.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384055"/>
+                            <criterion comment="rubygem-rdoc is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384056"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-test-unit is earlier than 0:3.2.7-105.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384057"/>
+                            <criterion comment="rubygem-test-unit is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384058"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygem-xmlrpc is earlier than 0:0.3.0-105.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384059"/>
+                            <criterion comment="rubygem-xmlrpc is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384060"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygems is earlier than 0:2.7.6.2-105.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384061"/>
+                            <criterion comment="rubygems is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384062"/>
+                        </criteria>
+                        <criteria operator="AND">
+                            <criterion comment="rubygems-devel is earlier than 0:2.7.6.2-105.module+el8.1.0+3656+f80bfa1d" test_ref="oval:com.redhat.rhba:tst:20193384063"/>
+                            <criterion comment="rubygems-devel is signed with Red Hat redhatrelease2 key" test_ref="oval:com.redhat.rhba:tst:20193384064"/>
+                        </criteria>
+                    </criteria>
+                </criteria>
+            </criteria>
+        </criteria>
+    </criteria>
+</definition>
